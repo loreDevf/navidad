@@ -91,16 +91,17 @@ class _ChristmasLightsState extends State<ChristmasLights>
             end: Alignment.bottomCenter,
             transform: _SlideGradientTransform(animationController.value),
             colors: const [
-             Color(0xFFFEDA77),
-            Color(0xFFF58529),
-            Color(0xFFDD2A7B),
-            Color(0xFF8134AF),
-            Color(0xFF515BD4),
+              Color(0xFFFEDA77),
+              Color(0xFFF58529),
+              Color(0xFFDD2A7B),
+              Color(0xFF8134AF),
+              Color(0xFF515BD4),
             ],
           ).createShader(bounds),
           child: Image.asset(
             'assets/leaves.png',
             width: 140,
+            height: 400,
             fit: BoxFit.cover,
           ),
         );
