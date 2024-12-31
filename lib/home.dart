@@ -20,22 +20,34 @@ class Home extends StatelessWidget {
         children: [
           Center(
             child: Stack(
+              clipBehavior: Clip.none,
               children: [
-                ...List.generate(
-                  leaves,
-                  (index) => Leaf(
-                    position: ((360 / leaves) * index),
+                Stack(
+                  children: [
+                    ...List.generate(
+                      leaves,
+                      (index) => Leaf(
+                        position: ((360 / leaves) * index),
+                      ),
+                    ),
+                  ],
+                ),
+                Positioned(
+                  /// [top] se establece en -35 para que la estrella se muestre
+                  /// en la parte superio del árbol
+                  top: -35,
+                  left: 0,
+                  right: 0,
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: Image.asset(
+                      'assets/star.webp',
+                      width: 40,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ],
-            ),
-          ),
-          Positioned(
-            top: 165,
-            child: Image.asset(
-              'assets/star.webp',
-              width: 40,
-              fit: BoxFit.cover,
             ),
           ),
           const SnowFallAnimation(
